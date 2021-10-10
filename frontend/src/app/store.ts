@@ -1,9 +1,9 @@
 import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit';
-
+import todosReducer from '../models/todosSlice'
 
 export const store = configureStore({
   reducer: {
-    
+    todos: todosReducer,
   },
 });
 
