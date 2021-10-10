@@ -6,7 +6,7 @@ const getTodos = async (): Promise<AxiosResponse<Array<ITodo>>> => {
     try {
         const todos = await axios.get(`${API_URL}/todos`)
         return todos
-    } catch (error) {
+    } catch (error:any) {
         console.error(`GET /api/todos ERROR: ${error}`)
         throw new Error(error)
     }
@@ -20,7 +20,7 @@ const addTodo = async (todoBody: ITodo): Promise<AxiosResponse<ITodo>> => {
         }
         const todo = await axios.post(`${API_URL}/todos`, newTodo)
         return todo
-    } catch (error) {
+    } catch (error:any) {
         console.error(`POST /api/todos ERROR: ${error}`)
         throw new Error(error)
     }
@@ -34,7 +34,7 @@ const updateTodo = async (todoBody: ITodo): Promise<AxiosResponse<ITodo>> => {
         }
         const todo = await axios.put(`${API_URL}/todos/${todoBody._id}`, newTodo)
         return todo
-    } catch (error) {
+    } catch (error:any) {
         console.error(`PUT /api/todos/${todoBody._id} ERROR: ${error}`)
         throw new Error(error)
     }
@@ -44,7 +44,7 @@ const deleteTodo = async (id: string): Promise<AxiosResponse> => {
     try {
         const res = await axios.delete(`${API_URL}/todos/${id}`)
         return res
-    } catch (error) {
+    } catch (error:any) {
         console.error(`DELETE /api/todos/${id} ERROR: ${error}`)
         throw new Error(error)
     }
