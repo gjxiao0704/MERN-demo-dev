@@ -4,12 +4,13 @@ import { getTodos } from '../API';
 
 export interface todosState {
   todoList: Array<ITodo>
+  status: 'idle' | 'loading' | 'failed';
 
 }
 
 const initialState: todosState = {
   todoList: [],
-
+  status: 'idle',
 };
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -38,6 +39,7 @@ export const todosSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getTodosAsync.fulfilled, (state, action) => {
+        console.log(action.payload)
         state.todoList = action.payload
       });
   },

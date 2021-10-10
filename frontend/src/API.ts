@@ -5,6 +5,8 @@ const API_URL = 'http://localhost:8888/api'
 const getTodos = async (): Promise<AxiosResponse<Array<ITodo>>> => {
     try {
         const todos = await axios.get(`${API_URL}/todos`)
+        console.log("todos")
+        console.log(todos)
         return todos
     } catch (error:any) {
         console.error(`GET /api/todos ERROR: ${error}`)

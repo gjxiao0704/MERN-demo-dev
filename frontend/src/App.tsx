@@ -11,7 +11,7 @@ const App = () => {
   const dispatch = useAppDispatch();
   useEffect(() => {
     dispatch(getTodosAsync())
-    console.log(typeof(todos))
+    
   }, []);
 
 
@@ -40,7 +40,15 @@ const App = () => {
       <h1>My Todos</h1>
       
       <AddTodo saveTodo={handleSaveTodo} />
-      {console.log(typeof(todos))
+      {
+        todos.map((todo: ITodo) => (
+          <TodoItem
+            key={todo._id}
+            updateTodo={handleUpdateTodo}
+            deleteTodo={handleDeleteTodo}
+            todo={todo}
+          />
+        ))
       }
       
   

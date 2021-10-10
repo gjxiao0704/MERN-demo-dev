@@ -12,7 +12,7 @@ const TodoRouter = (server: FastifyInstance, opts: RouteShorthandOptions, done: 
   server.get('/todos', opts, async (request, reply) => {
     try {
       const todos: Array<ITodo> = await todoRepo.getTodos()
-      return reply.status(200).send({ todos })
+      return reply.status(200).send( todos )
     } catch (error) {
       console.error(`GET /todos Error: ${error}`)
       return reply.status(500).send(`[Server Error]: ${error}`)
