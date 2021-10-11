@@ -39,9 +39,12 @@ export const todosSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getTodosAsync.fulfilled, (state, action) => {
-        console.log(action.payload)
         state.todoList = action.payload
-      });
+        state.status = 'idle'
+      })
+      .addCase(getTodosAsync.pending, (state) => {
+        state.status = 'loading'
+      })
   },
 });
 

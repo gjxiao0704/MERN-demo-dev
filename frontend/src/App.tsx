@@ -9,9 +9,9 @@ import { selectTodos,getTodosAsync } from './models/todosSlice'
 const App = () => {
   const todos = useAppSelector(selectTodos);
   const dispatch = useAppDispatch();
+  
   useEffect(() => {
     dispatch(getTodosAsync())
-    
   }, []);
 
 

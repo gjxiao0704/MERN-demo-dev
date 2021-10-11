@@ -23,7 +23,7 @@ const TodoRouter = (server: FastifyInstance, opts: RouteShorthandOptions, done: 
     try {
       const todoBody: ITodo = request.body as ITodo
       const todo: ITodo = await todoRepo.addTodo(todoBody)
-      return reply.status(201).send({ todo })
+      return reply.status(201).send( todo )
     } catch (error) {
       console.error(`POST /todos Error: ${error}`)
       return reply.status(500).send(`[Server Error]: ${error}`)
@@ -36,7 +36,7 @@ const TodoRouter = (server: FastifyInstance, opts: RouteShorthandOptions, done: 
       const todoBody = request.body as ITodo
       const todo: ITodo | null = await todoRepo.updateTodo(id, todoBody)
       if (todo) {
-        return reply.status(200).send({ todo })
+        return reply.status(200).send( todo )
       } else {
         return reply.status(404).send({ msg: `Not Found Todo:${id}` })
       }
