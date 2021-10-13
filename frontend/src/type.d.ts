@@ -10,3 +10,10 @@ interface ITodo {
 interface TodoProps {
     todo: ITodo
 }
+
+interface todosResponse {
+    todos: Array<ITodo>
+}
+interface todoResponse {
+    todo : ITodo 
+}

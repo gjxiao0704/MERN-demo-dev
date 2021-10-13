@@ -23,7 +23,7 @@ export const getTodosAsync = createAsyncThunk(
   async () => {
     const response = await getTodos();
     // The value we return becomes the `fulfilled` action payload
-    return response.data;
+    return response.data.todos;
   }
 );
 
