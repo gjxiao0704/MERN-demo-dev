@@ -21,9 +21,9 @@ const initialState: todosState = {
 export const getTodosAsync = createAsyncThunk(
   'todos/getTodos',
   async () => {
-    const response = await getTodos();
+    const res = await getTodos();
     // The value we return becomes the `fulfilled` action payload
-    return response.data.todos;
+    return res.data.todos;
   }
 );
 
