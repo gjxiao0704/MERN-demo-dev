@@ -98,3 +98,10 @@ body {
 .hide-button {
     display: none;
 }
+.datatable-selection-demo .card h6 {
+    margin-top: 2rem;
+}
+.datatable-selection-demo .card h6:first-of-type {
+    margin-top: 0;
+}
+
